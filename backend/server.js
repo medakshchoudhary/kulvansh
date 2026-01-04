@@ -19,6 +19,6 @@ app.use(express.json())
 app.use("/api/serverstatus", serverStatusRoutes);
 app.use("/api/person", personRoutes);
 
-app.listen(process.env.PORT, async () => {
+app.listen(process.env.PORT, () => {
     console.log("Server is up and running");
 })
