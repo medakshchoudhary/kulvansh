@@ -5,6 +5,7 @@ import { connectDB } from "./config/db.js";
 
 // Routes
 import serverStatusRoutes from "./routes/serverStatusRoutes.js"
+import personRoutes from "./routes/personRoutes.js"
 
 
 config();
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json())
 
 app.use("/api/serverstatus", serverStatusRoutes);
+app.use("/api/person", personRoutes);
 
 app.listen(process.env.PORT, async () => {
     console.log("Server is up and running");
