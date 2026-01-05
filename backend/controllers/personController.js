@@ -10,6 +10,16 @@ export const createPerson = async (req,res) => {
     }
 } 
 
+export const createPersonBulk = async (req,res) => {
+    try {
+        const people = await Person.insertMany(req.body);
+        res.json(people);
+    }
+    catch (err) {
+        console.error(err.message)
+    }
+} 
+
 export const getPersons = async (req,res) => { 
     try {
         const people = await Person.find();
