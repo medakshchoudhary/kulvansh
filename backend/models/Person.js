@@ -23,7 +23,11 @@ const personSchema = new mongoose.Schema(
         },
         
         spouseId: { type: mongoose.Schema.Types.ObjectId, ref: "Person" },
-        childrenIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "Person" }]
+        childrenIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "Person" }],
+
+        familyId: { type: mongoose.Schema.Types.ObjectId, ref: "Family", required: true },
+
+        createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
     },
     {
         timestamps: true
